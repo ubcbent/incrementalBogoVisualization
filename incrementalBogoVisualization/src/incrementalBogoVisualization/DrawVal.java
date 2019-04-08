@@ -2,15 +2,16 @@ package incrementalBogoVisualization;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class DrawVal extends JPanel{
 	
-	private int[] a;
-	private int width;
-	private int height;
-	private int[] numsorts;
+	public ArrayList<Integer> a;
+	public int width;
+	public int height;
+	public int[] numsorts;
 	
-	public DrawVal(int[] a, int width, int height, int[] numsorts) {
+	public DrawVal(ArrayList<Integer> a, int width, int height, int[] numsorts) {
 		this.a = a;
 		this.width = width;
 		this.height = height;
@@ -23,15 +24,19 @@ public class DrawVal extends JPanel{
 	   super.paintComponent(g);
 	   g.setColor(Color.white);
 	   // draw the rectangles here
-	   int w = width/a.length-1;
-	   for(int i = 0; i<a.length; i++) {
+	   //System.out.println(a.size());
+	   //System.out.println(a);
+	   //System.out.println(width);
+	   int w = width/a.size()-1;
+	   for(int i = 0; i<a.size(); i++) {
 			int x = i+w*i;
-			int y = height-(int)(((double)a[i]/(double)a.length)*((double)height-200.0));
-			int h = a[i]*((int)((height-200)/a.length));
+			int y = height-(int)(((double)a.get(i)/(double)a.size())*((double)height-200.0));
+			int h = a.get(i)*((int)((height-200)/a.size()));
 			g.fillRect(x, y, w, h);
 		}
+	   //System.out.println(a);
 	   g.drawString("Total Shuffles: "+this.numsorts[0], 10, 15);
-	   g.drawString("Number of Elements: "+a.length, 10, 30);
+	   g.drawString("Number of Elements: "+a.size(), 10, 30);
 	   
 	}
 

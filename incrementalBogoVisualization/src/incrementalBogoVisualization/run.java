@@ -5,7 +5,7 @@ public class run {
 	public static void main(String[] args) {
 		
 		IncrementalBogoSort sort = new IncrementalBogoSort();
-		sort.initialize(10);
+		sort.initialize(12);
 		SortFrame test = new SortFrame();
 		while(!sort.isSorted()) {
 			test.drawArray(sort.array,sort.numsorts);
