@@ -5,8 +5,7 @@ import java.awt.Color;
 
 public class SortFrame{
 	JFrame window;
-	private String stats;
-	private DrawVal[] vals;
+	DrawVal draw;
 	private static int width = 1000;
 	private static int height = 700;
 	
@@ -20,8 +19,9 @@ public class SortFrame{
 		window.setVisible(true);
 	}
 	
-	public void drawArray(int[] a) {
-		window.add(new DrawVal(a,width,height));
+	public void drawArray(int[] a, int[] numsorts) {
+		draw = new DrawVal(a,width,height,numsorts);
+		window.add(draw);
 		window.repaint();
 	}
 }

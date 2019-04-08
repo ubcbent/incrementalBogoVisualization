@@ -4,8 +4,15 @@ public class run {
 
 	public static void main(String[] args) {
 		
+		IncrementalBogoSort sort = new IncrementalBogoSort();
+		sort.initialize(10);
 		SortFrame test = new SortFrame();
-		test.drawArray(new int[] {2,1});
+		while(!sort.isSorted()) {
+			test.drawArray(sort.array,sort.numsorts);
+			//try {Thread.sleep(50);}catch(Exception e) {}
+			sort.shuffle();
+		}
+		test.drawArray(sort.array,sort.numsorts);
 
 	}
 
