@@ -9,14 +9,16 @@ public class DrawVal extends JPanel{
 	public ArrayList<Integer> a;
 	public int width;
 	public int height;
-	public int[] numsorts;
+	public double numsorts;
+	private double start;
 	
-	public DrawVal(ArrayList<Integer> a, int width, int height, int[] numsorts) {
+	public DrawVal(ArrayList<Integer> a, int width, int height, double numsorts) {
 		this.a = a;
 		this.width = width;
 		this.height = height;
 		this.numsorts = numsorts;
 		this.setBackground(Color.black);
+		this.start = System.currentTimeMillis();
 	}
 	
 	@Override
@@ -35,9 +37,32 @@ public class DrawVal extends JPanel{
 			g.fillRect(x, y, w, h);
 		}
 	   //System.out.println(a);
-	   g.drawString("Total Shuffles: "+this.numsorts[0], 10, 15);
+	   g.drawString("Total Shuffles: "+String.format("%.0f",numsorts), 10, 15);
 	   g.drawString("Number of Elements: "+a.size(), 10, 30);
+	   g.drawString("Time Elapsed: "+formatTime(), 10, 45);
 	   
+	}
+	
+	private String formatTime() {
+		int seconds = (int)((System.currentTimeMillis()-start)/1000.0);
+		int minutes = 0;
+		int hours = 0;
+		if(seconds>=3600) {
+			hours = seconds/3600;
+			seconds = seconds%3600;
+		}
+		if(seconds>=60) {
+			minutes = seconds/60;
+			seconds = seconds%60;
+		}
+		
+		String h = String.valueOf(hours);
+		String m = String.valueOf(minutes);
+		String s = String.valueOf(seconds);
+		if(h.length()==1) {h="0"+h;}
+		if(m.length()==1) {m="0"+m;}
+		if(s.length()==1) {s="0"+s;}
+		return h+":"+m+":"+s;
 	}
 
 }

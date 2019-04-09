@@ -15,7 +15,7 @@ public class SortFrame{
 		ArrayList<Integer> temp = new ArrayList<Integer>();
 		temp.add(1);
 		System.out.println("construct");
-		draw  = new DrawVal(temp,width,height,new int[] {0});
+		draw  = new DrawVal(temp,width,height,0);
 		window = new JFrame();
 		window.setResizable(false);
 		window.setTitle("BogoSort");
@@ -26,7 +26,7 @@ public class SortFrame{
 		window.setVisible(true);
 	}
 	
-	public void drawArray(ArrayList<Integer> a, int[] numsorts) {
+	public void drawArray(ArrayList<Integer> a, double numsorts) {
 		draw.a = a;
 		draw.numsorts = numsorts;
 		window.add(draw);
