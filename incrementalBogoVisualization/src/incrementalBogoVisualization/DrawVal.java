@@ -11,6 +11,7 @@ public class DrawVal extends JPanel{
 	public int height;
 	public double numsorts;
 	private double start;
+	public int numcorrect;
 	
 	public DrawVal(ArrayList<Integer> a, int width, int height, double numsorts) {
 		this.a = a;
@@ -19,12 +20,12 @@ public class DrawVal extends JPanel{
 		this.numsorts = numsorts;
 		this.setBackground(Color.black);
 		this.start = System.currentTimeMillis();
+		numcorrect = 0;
 	}
 	
 	@Override
 	protected void paintComponent(Graphics g) {
 	   super.paintComponent(g);
-	   g.setColor(Color.white);
 	   // draw the rectangles here
 	   //System.out.println(a.size());
 	   //System.out.println(a);
@@ -34,6 +35,8 @@ public class DrawVal extends JPanel{
 			int x = i+w*i;
 			int y = height-(int)(((double)a.get(i)/(double)a.size())*((double)height-200.0));
 			int h = a.get(i)*((int)((height-200)/a.size()));
+			g.setColor(Color.white);
+			if(i<numcorrect) {g.setColor(Color.green);}
 			g.fillRect(x, y, w, h);
 		}
 	   //System.out.println(a);

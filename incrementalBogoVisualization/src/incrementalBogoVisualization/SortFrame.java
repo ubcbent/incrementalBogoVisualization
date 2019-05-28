@@ -26,9 +26,10 @@ public class SortFrame{
 		window.setVisible(true);
 	}
 	
-	public void drawArray(ArrayList<Integer> a, double numsorts) {
-		draw.a = a;
-		draw.numsorts = numsorts;
+	public void drawArray(IncrementalBogoSort b) {
+		draw.a = b.array;
+		draw.numsorts = b.numsorts;
+		draw.numcorrect = b.numcorrect; // for smartbogo
 		window.add(draw);
 		window.repaint();
 	}
