@@ -29,7 +29,7 @@ public class SortFrame{
 	public void drawArray(IncrementalBogoSort b) {
 		draw.a = b.array;
 		draw.numsorts = b.numsorts;
-		draw.numcorrect = b.numcorrect; // for smartbogo
+		draw.numcorrect = b.numcorrect; // for green elements
 		window.add(draw);
 		window.repaint();
 	}

@@ -3,22 +3,8 @@ package incrementalBogoVisualization;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class IncrementalBogoSort {
+public class IncrementalBogoSort extends Sort{
 	
-	public ArrayList<Integer> array;
-	public double numsorts;
-	public int numcorrect;
-	
-	public void initialize(int size) {
-		// only for starting things off, keep even if we change the sort
-		array = new ArrayList<Integer>();
-		numcorrect = 0;
-		numsorts = 0;
-		for(int i = 0; i<size; i++) {
-			array.add(i+1); //1 to size
-		}
-		Collections.shuffle(array);
-	}
 	public boolean isSorted() {
 		// check if array is sorted
 		numcorrect = 0;
