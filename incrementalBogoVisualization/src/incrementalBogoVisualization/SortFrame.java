@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class SortFrame{
 	JFrame window;
 	DrawVal draw;
-	private static int width = 1000;
+	private static int width = 1500;
 	private static int height = 700;
 	
 	public SortFrame() {
@@ -26,7 +26,7 @@ public class SortFrame{
 		window.setVisible(true);
 	}
 	
-	public void drawArray(IncrementalBogoSort b) {
+	public void drawArray(Sort b) {
 		draw.a = b.array;
 		draw.numsorts = b.numsorts;
 		draw.numcorrect = b.numcorrect; // for green elements

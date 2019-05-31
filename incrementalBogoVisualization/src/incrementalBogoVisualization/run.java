@@ -4,13 +4,13 @@ public class run {
 
 	public static void main(String[] args) {
 		
-		IncrementalBogoSort sort = new IncrementalBogoSort();
-		sort.initialize(500);
+		InsertionSort sort = new InsertionSort();
+		sort.initialize(300);
 		SortFrame test = new SortFrame();
-		while(!sort.isSorted()) {
+		while(!sort.sortStep()) {
 			test.drawArray(sort);
-			//try {Thread.sleep(500);}catch(Exception e) {}
-			sort.smartbogo();
+			try {Thread.sleep(20);}catch(Exception e) {}
+			//sort.smartbogo();
 		}
 		test.drawArray(sort);
 

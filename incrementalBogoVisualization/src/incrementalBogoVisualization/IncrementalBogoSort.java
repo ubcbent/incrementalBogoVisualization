@@ -39,6 +39,7 @@ public class IncrementalBogoSort extends Sort{
 			temp2.add(array.get(i));
 		}
 		Collections.shuffle(temp2);
+		//TODO figure out how to get array.clear() working without messing up the draw thread
 		array = new ArrayList<Integer>();
 		
 		array.addAll(temp1);

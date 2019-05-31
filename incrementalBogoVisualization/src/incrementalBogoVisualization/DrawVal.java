@@ -30,17 +30,22 @@ public class DrawVal extends JPanel{
 	   //System.out.println(a.size());
 	   //System.out.println(a);
 	   //System.out.println(width);
-	   int w = width/a.size()-1;
+	   int w = (width)/a.size();
+	   System.out.println(w);
 	   for(int i = 0; i<a.size(); i++) {
-			int x = i+w*i;
-			int y = height-(int)(((double)a.get(i)/(double)a.size())*((double)height-200.0));
-			int h = a.get(i)*((int)((height-200)/a.size()));
+			int x = w*i;
+			int y = height-(int)(((double)a.get(i)/(double)a.size())*((double)height-230.0)) - 30; // bottom pixels get cut so I pulled all the bars up a bit
+			//System.out.println(y-height);
+			//int h = a.get(i)*((int)((height-200)/a.size()));
+			int h = height; //may as well let the bars extend off screen
+			//System.out.println(h);
 			g.setColor(Color.white);
 			if(i<numcorrect) {g.setColor(Color.green);}
 			g.fillRect(x, y, w, h);
 		}
+	   //System.exit(0);
 	   //System.out.println(a);
-	   g.drawString("Total Shuffles: "+String.format("%.0f",numsorts), 10, 15);
+	   g.drawString("Total Steps: "+String.format("%.0f",numsorts), 10, 15);
 	   g.drawString("Number of Elements: "+a.size(), 10, 30);
 	   g.drawString("Time Elapsed: "+formatTime(), 10, 45);
 	   
