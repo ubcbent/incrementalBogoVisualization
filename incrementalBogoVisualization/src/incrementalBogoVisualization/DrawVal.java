@@ -9,7 +9,8 @@ public class DrawVal extends JPanel{
 	public ArrayList<Integer> a;
 	public int width;
 	public int height;
-	public double numsorts;
+	public int[] comparingIndex;
+	public double nummoves;
 	private double start;
 	public int numcorrect;
 	
@@ -17,7 +18,8 @@ public class DrawVal extends JPanel{
 		this.a = a;
 		this.width = width;
 		this.height = height;
-		this.numsorts = numsorts;
+		comparingIndex = new int[] {-1,-1};
+		this.nummoves = numsorts;
 		this.setBackground(Color.black);
 		this.start = System.currentTimeMillis();
 		numcorrect = 0;
@@ -27,25 +29,26 @@ public class DrawVal extends JPanel{
 	protected void paintComponent(Graphics g) {
 	   super.paintComponent(g);
 	   // draw the rectangles here
-	   //System.out.println(a.size());
-	   //System.out.println(a);
-	   //System.out.println(width);
-	   int w = (width)/a.size();
-	   //System.out.println(w);
+	   int w = width/a.size();
 	   for(int i = 0; i<a.size(); i++) {
+		    //get dimensions
 			int x = w*i;
 			int y = height-(int)(((double)a.get(i)/(double)a.size())*((double)height-230.0)) - 30; // bottom pixels get cut so I pulled all the bars up a bit
-			//System.out.println(y-height);
-			//int h = a.get(i)*((int)((height-200)/a.size()));
 			int h = height; //may as well let the bars extend off screen
-			//System.out.println(h);
+
+			//choose colour
 			g.setColor(Color.white);
-			if(i<numcorrect) {g.setColor(Color.green);}
+			if(i<numcorrect) {
+				g.setColor(Color.green);
+			}else if(comparingIndex[0]==i || comparingIndex[1]==i) {
+				g.setColor(Color.red);
+			}
 			g.fillRect(x, y, w, h);
 		}
 	   //System.exit(0);
 	   //System.out.println(a);
-	   g.drawString("Total Steps: "+String.format("%.0f",numsorts), 10, 15);
+	   g.setColor(Color.white);
+	   g.drawString("Total Moves: "+String.format("%.0f",nummoves), 10, 15);
 	   g.drawString("Number of Elements: "+a.size(), 10, 30);
 	   g.drawString("Time Elapsed: "+formatTime(), 10, 45);
 	   

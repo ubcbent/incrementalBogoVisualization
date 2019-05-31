@@ -20,14 +20,14 @@ public class IncrementalBogoSort extends Sort{
 	}
 	public void shuffle() {
 		//using collections cause im lazy
-		numsorts++;
+		nummoves++;
 		//System.out.println(numsorts[0]);
 		Collections.shuffle(array);
 	}
 	
 	public void smartbogo() {
 		//using collections cause im lazy
-		numsorts++;
+		nummoves++;
 		// correct part
 		ArrayList<Integer> temp1 = new ArrayList<Integer>();
 		for(int i = 0; i<numcorrect;i++) {

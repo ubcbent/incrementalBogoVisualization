@@ -28,8 +28,9 @@ public class SortFrame{
 	
 	public void drawArray(Sort b) {
 		draw.a = b.array;
-		draw.numsorts = b.numsorts;
+		draw.nummoves = b.nummoves;
 		draw.numcorrect = b.numcorrect; // for green elements
+		draw.comparingIndex = b.comparingIndex;
 		window.add(draw);
 		window.repaint();
 	}
