@@ -31,7 +31,7 @@ public class SortFrame{
 		draw.nummoves = b.nummoves;
 		draw.numcorrect = b.numcorrect; // for green elements
 		draw.comparingIndex = b.comparingIndex;
-		window.add(draw);
+		//window.add(draw);
 		window.repaint();
 	}
 }

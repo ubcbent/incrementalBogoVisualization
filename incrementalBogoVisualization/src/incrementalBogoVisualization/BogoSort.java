@@ -3,7 +3,11 @@ package incrementalBogoVisualization;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class IncrementalBogoSort extends Sort{
+public class BogoSort extends Sort{
+	
+	public BogoSort(SortFrame f, int size) {
+		super(f,size);
+	}
 	
 	public boolean isSorted() {
 		// check if array is sorted

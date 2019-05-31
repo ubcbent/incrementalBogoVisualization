@@ -8,8 +8,8 @@ public class InsertionSort extends Sort{
 	private ArrayList<Integer> sorted;
 	private ArrayList<Integer> unsorted;
 	
-	public void initialize(int size) {
-		super.initialize(size);
+	public InsertionSort(SortFrame f, int size) {
+		super(f, size);
 		
 		// in insertion sort we also should initialize the sorted and unsorted portions
 		sorted = new ArrayList<Integer>();

@@ -4,9 +4,8 @@ public class run {
 
 	public static void main(String[] args) {
 		
-		InsertionSort sort = new InsertionSort();
-		sort.initialize(300);
 		SortFrame test = new SortFrame();
+		InsertionSort sort = new InsertionSort(test,300);
 		while(!sort.sortStep()) {
 			test.drawArray(sort);
 			try {Thread.sleep(20);}catch(Exception e) {}
