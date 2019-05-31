@@ -46,6 +46,7 @@ public class InsertionSort extends Sort{
 		array = new ArrayList<Integer>();
 		array.addAll(sorted);
 		array.addAll(unsorted);
+		frame.drawArray(this);
 		
 		return false;
 	}

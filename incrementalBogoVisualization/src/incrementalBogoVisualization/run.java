@@ -7,7 +7,7 @@ public class run {
 		SortFrame test = new SortFrame();
 		InsertionSort sort = new InsertionSort(test,300);
 		while(!sort.sortStep()) {
-			test.drawArray(sort);
+			//test.drawArray(sort);
 			try {Thread.sleep(20);}catch(Exception e) {}
 			//sort.smartbogo();
 		}
