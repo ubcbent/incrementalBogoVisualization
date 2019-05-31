@@ -31,7 +31,7 @@ public class DrawVal extends JPanel{
 	   //System.out.println(a);
 	   //System.out.println(width);
 	   int w = (width)/a.size();
-	   System.out.println(w);
+	   //System.out.println(w);
 	   for(int i = 0; i<a.size(); i++) {
 			int x = w*i;
 			int y = height-(int)(((double)a.get(i)/(double)a.size())*((double)height-230.0)) - 30; // bottom pixels get cut so I pulled all the bars up a bit
